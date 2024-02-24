@@ -2,8 +2,8 @@ import { JSX, createSignal } from 'solid-js';
 import IconItem from './IconItem';
 
 enum Theme {
-  Light,
-  Dark,
+  Light = 'light',
+  Dark = 'dark',
 }
 
 interface Props {}
@@ -12,19 +12,24 @@ export default function ThemeToggler(props: Props) {
   const [theme, setTheme] = createSignal<Theme>(Theme.Light);
   const isActive = (themeName: Theme) => theme() === themeName;
 
+  const changeTheme = (target: Theme) => {
+    setTheme(target);
+    document.body.setAttribute('data-theme', target);
+  };
+
   return (
     <IconItem classNames="text-2xl">
       {isActive(Theme.Light) && (
         <XIconLightMode
           onClick={() => {
-            setTheme(Theme.Dark);
+            changeTheme(Theme.Dark);
           }}
         />
       )}
       {isActive(Theme.Dark) && (
         <XIconDarkMode
           onClick={() => {
-            setTheme(Theme.Light);
+            changeTheme(Theme.Light);
           }}
         />
       )}

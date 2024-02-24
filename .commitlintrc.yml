@@ -1,0 +1,8 @@
+extends:
+  - '@commitlint/config-conventional'
+plugins:
+  - references
+rules:
+  #允许中文
+  subject-case: [0]
+  body-max-line-length: [1, 'always', 120]
