@@ -1,0 +1,4 @@
+.icon-item {
+
+  @apply flex items-center justify-center rounded-md transition duration-100 ease-linear hover:bg-white/10 active:bg-white/20;
+}

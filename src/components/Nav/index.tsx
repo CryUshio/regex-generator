@@ -1,7 +1,7 @@
 import { useLocation } from '@solidjs/router';
-import './Nav.less';
-import IconItem from './IconItem';
-import ThemeToggler from './ThemeToggler';
+import './index.less';
+import IconItem from '../IconItem';
+import ThemeToggler from '../ThemeToggler';
 
 export default function Nav() {
   const location = useLocation();

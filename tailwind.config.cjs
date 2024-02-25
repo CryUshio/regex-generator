@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        textcolor: {
+          primary: 'var(--text-color-primary)',
+          active: 'var(--text-color-active)',
+        },
         gray: {
           950: '#303133',
         },

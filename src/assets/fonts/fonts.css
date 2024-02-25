@@ -1,0 +1,10 @@
+@font-face {
+  font-family: Jost;
+  src: url('./Jost-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: Jost;
+  src: url('./Jost-Medium.ttf');
+  font-weight: 500;
+}
