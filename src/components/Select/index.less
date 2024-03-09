@@ -1,0 +1,19 @@
+.dropdown-content {
+  .selected > a {
+    --tw-bg-opacity: 1;
+    background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
+
+    --tw-text-opacity: 1;
+    color: var(--fallback-nc, oklch(var(--nc) / var(--tw-text-opacity)));
+  }
+
+  &.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    --tw-scale-x: 1 !important;
+    --tw-scale-y: 1 !important;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+      skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
