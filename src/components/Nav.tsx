@@ -1,6 +1,6 @@
 import { useLocation } from '@solidjs/router';
 import IconItem from './IconItem';
-import ApiKeySetting from './ApiKeySetting';
+import ApiSetting from './ApiSetting';
 // import ThemeToggler from '../ThemeToggler';
 
 export default function Nav() {
@@ -21,7 +21,7 @@ export default function Nav() {
       </ul>
       <ul class="flex items-center gap-3">
         <li>
-          <ApiKeySetting />
+          <ApiSetting />
         </li>
         {/* <li>
           <ThemeToggler />

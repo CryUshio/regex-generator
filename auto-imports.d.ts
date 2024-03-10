@@ -7,6 +7,8 @@ export {}
 declare global {
   const XIconCheck: typeof import('~icons/icon/check.jsx')['default']
   const XIconClose: typeof import('~icons/icon/close.jsx')['default']
+  const XIconCopied: typeof import('~icons/icon/copied.jsx')['default']
+  const XIconCopy: typeof import('~icons/icon/copy.jsx')['default']
   const XIconDarkMode: typeof import('~icons/icon/dark-mode.jsx')['default']
   const XIconDown: typeof import('~icons/icon/down.jsx')['default']
   const XIconGithub: typeof import('~icons/icon/github.jsx')['default']

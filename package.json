@@ -7,10 +7,14 @@
     "start": "vinxi start"
   },
   "dependencies": {
+    "@solid-primitives/clipboard": "^1.5.10",
+    "@solid-primitives/storage": "^2.1.4",
     "@solidjs/router": "^0.12.0",
     "@solidjs/start": "^0.5.4",
     "autoprefixer": "^10.4.14",
     "clsx": "^2.1.0",
+    "highlight.js": "^11.9.0",
+    "lodash-es": "^4.17.21",
     "postcss": "^8.4.26",
     "solid-js": "^1.8.14",
     "tailwindcss": "^3.4.1"
@@ -18,6 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "commitlint-plugin-references": "^1.0.0",
@@ -31,6 +36,7 @@
     "eslint-plugin-solid": "^0.13.1",
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
+    "openai": "^4.28.4",
     "postcss-less": "^6.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^3.2.5",

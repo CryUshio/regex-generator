@@ -1,0 +1,48 @@
+import { APIEvent } from '@solidjs/start/server/types';
+import { OpenAI } from 'openai';
+
+export interface OpenAiChatCompletionReq {
+  lang: string;
+  prompt: string;
+  model: string;
+  apiKey: string;
+}
+
+export type ChatCompletionChunk = OpenAI.ChatCompletionChunk;
+
+export const POST = async (event: APIEvent) => {
+  // get request body
+  const body: OpenAiChatCompletionReq = await new Response(event.request.body).json();
+
+  // console.info('skr: body', body, event.clientAddress);
+
+  const preprocessedLang = body.lang === 'Regex only' ? 'regular expressions only' : body.lang;
+
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${body.apiKey}`,
+    },
+    body: JSON.stringify({
+      model: body.model,
+      temperature: 0,
+      stream: true,
+      user: event.clientAddress,
+      max_tokens: 1000,
+      messages: [
+        {
+          role: 'system',
+          content:
+            '## Goal:\n - You are a regex master. Incorporate the latest version of the user-specified language, covering all possible syntax of that language (including but not limited to destructuring assignment), to complete regex replacement. Answer with code only.\n\n## Hint:\n- You may use npm packages that have been verified to exist.',
+        },
+        {
+          role: 'user',
+          content: `- Language: ${preprocessedLang}\n- Requirement: ${body.prompt}`,
+        },
+      ],
+    } satisfies OpenAI.ChatCompletionCreateParamsStreaming),
+  });
+
+  return response;
+};

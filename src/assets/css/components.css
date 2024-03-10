@@ -3,9 +3,14 @@
   @apply flex items-center justify-center rounded-md transition duration-100 ease-linear hover:bg-white/10 active:bg-white/20;
 }
 
+.box-base {
+  width: 640px;
+  background-color: var(--item-normal-bg);
+}
+
 .text-ellipsis {
   display: inline-block;
   overflow: hidden;
-  white-space: nowarp;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }

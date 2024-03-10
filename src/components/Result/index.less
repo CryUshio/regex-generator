@@ -1,33 +1,13 @@
-.main-input {
-  width: 640px;
-  background-color: var(--item-normal-bg);
-
+.result {
   .btn {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    overflow: hidden;
-    min-height: unset;
-    height: 100%;
+    visibility: hidden;
+    opacity: 0;
   }
 
-  .dropdown-content {
-    .selected > a {
-      --tw-bg-opacity: 1;
-      background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
-
-      --tw-text-opacity: 1;
-      color: var(--fallback-nc, oklch(var(--nc) / var(--tw-text-opacity)));
-    }
-
-    &.open {
+  &:hover {
+    .btn {
       visibility: visible;
       opacity: 1;
-
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
-        skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
   }
 }
