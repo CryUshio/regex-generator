@@ -1,21 +1,38 @@
 /* eslint-disable max-lines-per-function */
-import { createSignal } from 'solid-js';
+import { createEffect, createSignal, onMount } from 'solid-js';
+import { useSearchParams } from '@solidjs/router';
+import { defaults } from 'lodash-es';
 import { ChatCompletionChunk, OpenAiChatCompletionReq } from './api/openai/chat-completions';
 import MainInput from '~/components/MainInput';
 import Result from '~/components/Result';
 import { createApiSettingStorage } from '~/storages/api-settings';
 import { DONE_FLAG, parseChunkBuffer, readChunks } from '~/common/http-utils';
 
+type SearchParams = {
+  lang: string;
+  prompt: string;
+};
+
 export default function Home() {
+  const [searchParams, setSearchParams] = useSearchParams<SearchParams>();
   const [store] = createApiSettingStorage();
   const [loading, setLoading] = createSignal(false);
   const [result, setResult] = createSignal('');
   const [lang, setLang] = createSignal('');
 
-  const onSubmit = async (params: { lang: string; prompt: string }) => {
+  // onMount(() => {
+  //   if (searchParams?.prompt) {
+  //     onSubmit(defaults(searchParams as Required<SearchParams>, { lang: lang() }));
+  //   }
+  // });
+
+  const onSubmit = async (params: SearchParams) => {
+    const { lang, prompt } = params;
+
     setLoading(true);
     setResult('');
-    setLang(params.lang);
+    setLang(lang);
+    setSearchParams({ lang, prompt });
 
     const streamResponse = await fetch('/api/openai/chat-completions', {
       method: 'POST',
@@ -88,7 +105,7 @@ export default function Home() {
         Regex Generator
       </h1>
       <section class="pt-5 flex justify-center">
-        <MainInput onSubmit={onSubmit} disabled={loading()} />
+        <MainInput defaultValue={searchParams?.prompt} onSubmit={onSubmit} disabled={loading()} />
       </section>
       {(loading() || result()) && (
         <section class="pt-5 flex justify-center">

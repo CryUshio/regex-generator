@@ -7,6 +7,7 @@ import { createApiSettingStorage } from '~/storages/api-settings';
 import { createMainInputStorage } from '~/storages/main-input';
 
 interface Props {
+  defaultValue?: string;
   disabled?: boolean;
   onSubmit?: (form: { lang: string; prompt: string }) => void;
 }
@@ -29,7 +30,7 @@ const OPTIONS = [
 export default function MainInput(props: Props) {
   const [store, setStore] = createMainInputStorage();
   const [lang, setLang] = createSignal('');
-  const [prompt, setPrompt] = createSignal('');
+  const [prompt, setPrompt] = createSignal(props.defaultValue || '');
   const [err, setErr] = createSignal(false);
 
   const submit = () => {
@@ -67,6 +68,7 @@ export default function MainInput(props: Props) {
         class="w-full bg-transparent"
         spellcheck={false}
         disabled={props.disabled}
+        value={prompt()}
         placeholder={err() ? 'This is a required field.' : 'Match email addresses or...'}
         onChange={(e) => {
           setErr(false);

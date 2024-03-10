@@ -10,14 +10,16 @@ export default function Nav() {
 
   return (
     <nav class="box-border h-16 px-5 flex items-center text-white text-base" style={{ 'background-color': '#030C15' }}>
-      <img class="size-8" src="/favicon.png" alt="" />
+      <a href="/">
+        <img class="size-8" src="/favicon.png" alt="" />
+      </a>
       <ul class="flex grow items-center p-3 text-gray-200">
-        <li class={`border-b-2 ${active('/')} mx-1.5 sm:mx-6`}>
+        {/* <li class={`border-b-2 ${active('/')} mx-1.5 sm:mx-6`}>
           <a href="/">Home</a>
         </li>
         <li class={`border-b-2 ${active('/about')} mx-1.5 sm:mx-6`}>
           <a href="/about">More</a>
-        </li>
+        </li> */}
       </ul>
       <ul class="flex items-center gap-3">
         <li>
