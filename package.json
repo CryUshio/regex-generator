@@ -1,6 +1,7 @@
 {
   "name": "regex-generator",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",

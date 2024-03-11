@@ -1,33 +1,32 @@
-# regex-generator
+<p align="center">
+<a href="https://github.com/CryUshio/regex-generator"><img src="https://github.com/CryUshio/regex-generator/blob/master/public/brand-logo.png" alt="Say goodbye to the hassle of writing regular expressions." width="300"></a><br><br>
+Say goodbye to the hassle of writing regular expressions.
+</p>
+
+<p align="center">
+<a href="" target="__blank"><img src="https://img.shields.io/static/v1?label=Online&message=website&color=228be6" alt="Regex generator online"></a>
+<a href="https://github.com/CryUshio/regex-generator/blob/master/LICENSE"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=1c7ed6" alt="License"></a>
+<a><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FCryUshio%2Fregex-generator%2Fmaster%2Fpackage.json&query=%24.version&label=version" alt="version"></a>
+<a href="https://github.com/tabler/tabler" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CryUshio/regex-generator"></a>
+</p>
+
+## Intro
 Harness the capabilities of GPT to effortlessly create regular expressions on demand. This tool focuses on simplifying text pattern matching by automatically generating regex code from your input descriptions. Achieve accurate results quickly and efficiently, without the complexity of manual regex crafting.
-
-# SolidStart
-
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
-
-## Creating a project
-
-```bash
-# create a new project in the current directory
-npm init solid@latest
-
-# create a new project in my-app
-npm init solid@latest my-app
-```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+git clone https://github.com/CryUshio/regex-generator.git
+pnpm i
+pnpm dev
 ```
 
-## Building
+## Contributing
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-Solid apps are built with _adapters_, which optimise your project for deployment to different environments.
-
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different adapter, add it to the `devDependencies` in `package.json` and specify in your `vite.config.js`.
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
