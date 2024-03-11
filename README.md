@@ -6,7 +6,7 @@ Say goodbye to the hassle of writing regular expressions.
 <p align="center">
 <a href="" target="__blank"><img src="https://img.shields.io/static/v1?label=Online&message=website&color=228be6" alt="Regex generator online"></a>
 <a href="https://github.com/CryUshio/regex-generator/blob/master/LICENSE"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=1c7ed6" alt="License"></a>
-<a><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FCryUshio%2Fregex-generator%2Fmaster%2Fpackage.json&query=%24.version&label=version" alt="version"></a>
+<a><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FCryUshio%2Fregex-generator%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=version" alt="version"></a>
 <a href="https://github.com/tabler/tabler" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CryUshio/regex-generator"></a>
 </p>
 
