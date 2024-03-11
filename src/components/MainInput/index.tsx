@@ -1,10 +1,9 @@
-import { createComputed, createEffect, createSignal } from 'solid-js';
+import { createEffect, createSignal } from 'solid-js';
 import clsx from 'clsx';
 import Select from '../Select';
+import { createMainInputStorage } from '~/storages/main-input';
 
 import './index.less';
-import { createApiSettingStorage } from '~/storages/api-settings';
-import { createMainInputStorage } from '~/storages/main-input';
 
 interface Props {
   defaultValue?: string;
@@ -69,7 +68,7 @@ export default function MainInput(props: Props) {
         spellcheck={false}
         disabled={props.disabled}
         value={prompt()}
-        placeholder={err() ? 'This is a required field.' : 'Match email addresses or...'}
+        placeholder={err() ? 'This is a required field.' : 'Match, test or replace something...'}
         onChange={(e) => {
           setErr(false);
           setPrompt(e.target.value);

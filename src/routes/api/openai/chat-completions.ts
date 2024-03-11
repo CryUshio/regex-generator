@@ -10,6 +10,17 @@ export interface OpenAiChatCompletionReq {
 
 export type ChatCompletionChunk = OpenAI.ChatCompletionChunk;
 
+const SYSTEM_MSG = `## Role:
+- You are a regex master. Incorporate the latest version of the user-specified language, covering all possible syntax of that language (including but not limited to destructuring assignment), to complete regex replacement.
+
+## Goal:
+- Match the beginning and end according to the situation.
+- Answer with code only.
+
+## Hint:
+- You may use npm packages that have been verified to exist.
+`;
+
 export const POST = async (event: APIEvent) => {
   // get request body
   const body: OpenAiChatCompletionReq = await new Response(event.request.body).json();
@@ -33,8 +44,7 @@ export const POST = async (event: APIEvent) => {
       messages: [
         {
           role: 'system',
-          content:
-            '## Goal:\n - You are a regex master. Incorporate the latest version of the user-specified language, covering all possible syntax of that language (including but not limited to destructuring assignment), to complete regex replacement. Answer with code only.\n\n## Hint:\n- You may use npm packages that have been verified to exist.',
+          content: SYSTEM_MSG,
         },
         {
           role: 'user',

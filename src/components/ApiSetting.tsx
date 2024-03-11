@@ -19,16 +19,16 @@ const MODEL_LIST = [
     value: 'gpt-3.5-turbo',
   },
   {
+    label: 'GPT 3.5(0301)',
+    value: 'gpt-3.5-0301',
+  },
+  {
     label: 'GPT 3.5(0613)',
     value: 'gpt-3.5-0613',
   },
   {
     label: 'GPT 3.5(0125)',
     value: 'gpt-3.5-0125',
-  },
-  {
-    label: 'GPT 3.5(0301)',
-    value: 'gpt-3.5-0301',
   },
   {
     label: 'GPT 4',
