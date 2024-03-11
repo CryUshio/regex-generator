@@ -49,6 +49,12 @@ export default function Home() {
       // console.info('skr: streamResponse err');
       setLoading(false);
 
+      if (streamResponse) {
+        const err = await streamResponse.json();
+
+        return setResult(JSON.stringify(err, null, 2));
+      }
+
       return setResult('Network error.');
     }
 

@@ -5,7 +5,7 @@
 
 .box-base {
   width: 640px;
-  background-color: var(--item-normal-bg);
+  background-color: var(--item-normal-bg) !important;
 }
 
 .text-ellipsis {
