@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/CryUshio/regex-generator"><img src="https://github.com/CryUshio/regex-generator/blob/master/public/brand-logo.png" alt="Say goodbye to the hassle of writing regular expressions." width="300"></a><br><br>
+<a href="https://github.com/CryUshio/regex-generator"><img src="https://raw.githubusercontent.com/CryUshio/regex-generator/master/public/brand-logo.png" alt="Say goodbye to the hassle of writing regular expressions." width="300"></a><br><br>
 Say goodbye to the hassle of writing regular expressions.
 </p>
 
