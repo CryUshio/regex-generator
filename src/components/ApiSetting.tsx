@@ -1,10 +1,7 @@
-import { JSX, createSignal } from 'solid-js';
 import { Portal } from 'solid-js/web';
-import { makePersisted } from '@solid-primitives/storage';
-import { createStore } from 'solid-js/store';
 import IconItem from './IconItem';
 import Select from './Select';
-import { ApiSettingStorage, STORAGE_NAME, createApiSettingStorage } from '~/storages/api-settings';
+import { createApiSettingStorage } from '~/storages/api-settings';
 
 enum Theme {
   Light = 'light',
@@ -56,7 +53,6 @@ export default function ApiSetting(props: Props) {
         <dialog id="api_key_setting_modal" class="modal">
           <div class="modal-box absolute top-[12.5%] max-h-[75%]">
             <h3 class="font-bold text-lg">Api Setting</h3>
-            {/* <p class="py-4">Press ESC key or click the button below to close</p> */}
             <p class="flex gap-2 mt-4">
               <Select
                 class="w-48"

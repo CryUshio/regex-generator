@@ -1,5 +1,4 @@
-import { makePersisted } from '@solid-primitives/storage';
-import { createStore } from 'solid-js/store';
+import { createLocalStorage } from '~/hooks/createLocalStorage';
 
 export const STORAGE_NAME = 'regexp_generator__main_input';
 
@@ -8,12 +7,10 @@ export interface MainInputStorage {
 }
 
 export function createMainInputStorage(defaultValue?: MainInputStorage) {
-  return makePersisted(
-    createStore<MainInputStorage>(
-      defaultValue || {
-        lang: '',
-      },
-    ),
+  return createLocalStorage<MainInputStorage>(
+    defaultValue || {
+      lang: '',
+    },
     {
       name: STORAGE_NAME,
     },

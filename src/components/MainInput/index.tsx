@@ -1,5 +1,6 @@
-import { createEffect, createSignal } from 'solid-js';
+import { createSignal, onMount } from 'solid-js';
 import clsx from 'clsx';
+import { sleep } from 'openai/core';
 import Select from '../Select';
 import { createMainInputStorage } from '~/storages/main-input';
 
@@ -32,16 +33,24 @@ export default function MainInput(props: Props) {
   const [prompt, setPrompt] = createSignal(props.defaultValue || '');
   const [err, setErr] = createSignal(false);
 
-  const submit = () => {
+  const submit = async () => {
+    await sleep(0);
+
     if (prompt() === '') {
       return setErr(true);
     }
 
+    /**
+     * This storeThe store here seems to update more slowly,
+     * resulting in the retrieval of values that are still from before the update;
+     * it appears to be a bug in SolidJS.
+     **/
+    // props.onSubmit?.({ lang: store.lang, prompt: prompt() });
     props.onSubmit?.({ lang: lang(), prompt: prompt() });
   };
 
-  /** load localStorage in client */
-  createEffect(() => {
+  /** Load localStorage on the client-side. */
+  onMount(() => {
     setLang(store.lang);
   });
 
@@ -69,10 +78,8 @@ export default function MainInput(props: Props) {
         disabled={props.disabled}
         value={prompt()}
         placeholder={err() ? 'This is a required field.' : 'Match, test or replace something...'}
-        onChange={(e) => {
-          setErr(false);
-          setPrompt(e.target.value);
-        }}
+        onInput={() => err() && setErr(false)}
+        onChange={(e) => setPrompt(e.target.value)}
         onBlur={() => setErr(false)}
         onFocus={() => setErr(false)}
         onKeyPress={(e) => {
@@ -81,7 +88,6 @@ export default function MainInput(props: Props) {
           }
 
           setPrompt(e.currentTarget.value);
-          e.currentTarget.blur();
           submit();
         }}
       />

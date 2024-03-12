@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@solid-primitives/clipboard": "^1.5.10",
-    "@solid-primitives/storage": "^2.1.4",
     "@solidjs/router": "^0.12.0",
     "@solidjs/start": "^0.5.4",
     "autoprefixer": "^10.4.14",

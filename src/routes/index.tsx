@@ -1,7 +1,6 @@
 /* eslint-disable max-lines-per-function */
-import { createEffect, createSignal, onMount } from 'solid-js';
+import { createSignal } from 'solid-js';
 import { useSearchParams } from '@solidjs/router';
-import { defaults } from 'lodash-es';
 import { ChatCompletionChunk, OpenAiChatCompletionReq } from './api/openai/chat-completions';
 import MainInput from '~/components/MainInput';
 import Result from '~/components/Result';
@@ -107,9 +106,15 @@ export default function Home() {
 
   return (
     <main class="text-center mx-auto text-gray-950 textcolor-primary p-5">
-      <h1 class="max-6-xs text-4xl mt-20 mb-12" style={{ 'font-family': 'Jost' }}>
+      <h1 class="max-6-xs text-5xl mt-16 mb-8 font-medium select-none" style={{ 'font-family': 'Jost' }}>
         Regex Generator
       </h1>
+      <p
+        class="max-6-xs text-lg mb-12 select-none"
+        style={{ 'font-family': 'Jost', color: 'var(--text-color-regular)' }}
+      >
+        Say goodbye to the hassle of writing regular expressions.
+      </p>
       <section class="pt-5 flex justify-center">
         <MainInput defaultValue={searchParams?.prompt} onSubmit={onSubmit} disabled={loading()} />
       </section>

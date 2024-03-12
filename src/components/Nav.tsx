@@ -9,7 +9,10 @@ export default function Nav() {
     path === location.pathname ? 'border-sky-200' : 'border-transparent hover:border-sky-600';
 
   return (
-    <nav class="box-border h-16 px-5 flex items-center text-white text-base" style={{ 'background-color': '#030C15' }}>
+    <header
+      class="box-border h-16 px-5 flex items-center text-white text-base"
+      style={{ 'background-color': '#030C15' }}
+    >
       <a href="/">
         <img class="size-8" src="/favicon.png" alt="" />
       </a>
@@ -44,6 +47,6 @@ export default function Nav() {
           </button>
         </li>
       </ul>
-    </nav>
+    </header>
   );
 }
