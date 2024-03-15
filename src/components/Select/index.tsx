@@ -59,7 +59,7 @@ export default function Select<T extends Option>(props: Props<T>) {
           props.class,
         ])}
       >
-        <span class="text-ellipsis grow">{getOptionLabel(selected()) || 'Choose ...'}</span>
+        <span class="text-sm text-ellipsis grow">{getOptionLabel(selected()) || 'Choose ...'}</span>
         <XIconDown class="shrink-0" />
       </div>
       <ul class="dropdown-content z-[1] menu p-2 min-w-40 shadow rounded-md bg-base-100" classList={{ open: open() }}>
