@@ -45,11 +45,11 @@ export default function Home() {
     });
 
     if (!streamResponse || !streamResponse.ok) {
-      // console.info('skr: streamResponse err');
+      console.info('skr: streamResponse err');
       setLoading(false);
 
       if (streamResponse) {
-        const err = await streamResponse.json();
+        const err = await streamResponse.json().catch((e) => e);
 
         return setResult(JSON.stringify(err, null, 2));
       }

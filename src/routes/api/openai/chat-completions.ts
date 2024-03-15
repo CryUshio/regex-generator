@@ -1,5 +1,6 @@
 import { APIEvent } from '@solidjs/start/server/types';
 import { OpenAI } from 'openai';
+import { setResponseStatus } from 'vinxi/http';
 
 export interface OpenAiChatCompletionReq {
   lang: string;
@@ -53,6 +54,18 @@ export const POST = async (event: APIEvent) => {
       ],
     } satisfies OpenAI.ChatCompletionCreateParamsStreaming),
   });
+
+  if (!response.ok) {
+    let text = '';
+
+    try {
+      text = await response.text();
+    } catch (error) {}
+
+    setResponseStatus(500);
+
+    return text;
+  }
 
   return response;
 };

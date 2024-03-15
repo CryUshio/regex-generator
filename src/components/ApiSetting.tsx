@@ -29,7 +29,7 @@ const MODEL_LIST = [
   },
   {
     label: 'GPT 4',
-    value: 'gpt-4-turbo',
+    value: 'gpt-4',
   },
 ];
 
