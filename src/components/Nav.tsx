@@ -24,7 +24,7 @@ export default function Nav() {
           <a href="/about">More</a>
         </li> */}
       </ul>
-      <ul class="flex items-center gap-3">
+      <ul class="flex items-center gap-4">
         <li>
           <ApiSetting />
         </li>
@@ -40,12 +40,12 @@ export default function Nav() {
             <XIconGithub class="text-2xl text-white" />
           </IconItem>
         </li>
-        <li>
+        {/* <li>
           <button class="h-8 flex items-center px-2 ml-2 rounded-md border border-white text-white transition duration-100 ease-linear hover:bg-white hover:text-gray-950 active:bg-white/90 active:border-white/90">
             <XIconLove class="mr-1 text-lg text-red-500" />
             <span>Sponsor project</span>
           </button>
-        </li>
+        </li> */}
       </ul>
     </header>
   );

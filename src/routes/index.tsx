@@ -107,13 +107,13 @@ export default function Home() {
   return (
     <main class="text-center mx-auto text-gray-950 textcolor-primary p-5">
       <h1 class="max-6-xs text-5xl mt-16 mb-8 font-medium select-none" style={{ 'font-family': 'Jost' }}>
-        Regex Generator
+        Regex Generator AI
       </h1>
       <p
-        class="max-6-xs text-lg mb-12 select-none"
+        class="max-2-xs max-w-xl text-lg text-center mx-auto mb-12 select-none"
         style={{ 'font-family': 'Jost', color: 'var(--text-color-regular)' }}
       >
-        Say goodbye to the hassle of writing regular expressions.
+        An AI-powered tool that effortlessly creates regular expressions from just one sentence.
       </p>
       <section class="pt-5 flex justify-center">
         <MainInput defaultValue={searchParams?.prompt} onSubmit={onSubmit} disabled={loading()} />
