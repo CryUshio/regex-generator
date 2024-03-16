@@ -1,20 +1,25 @@
 import { useLocation } from '@solidjs/router';
+import clsx from 'clsx';
 import IconItem from './IconItem';
 import ApiSetting from './ApiSetting';
 // import ThemeToggler from '../ThemeToggler';
 
-export default function Nav() {
+type Props = {
+  class?: string;
+};
+
+export default function Nav(props: Props) {
   const location = useLocation();
   const active = (path: string) =>
     path === location.pathname ? 'border-sky-200' : 'border-transparent hover:border-sky-600';
 
   return (
     <header
-      class="box-border h-16 px-5 flex items-center text-white text-base"
-      style={{ 'background-color': '#030C15' }}
+      class={clsx(['box-border px-5 flex shrink-0 items-center text-white text-base', props.class])}
+      style={{ 'background-color': '#030C15', height: 'var(--header-height)' }}
     >
       <a href="/">
-        <img class="size-8" src="/favicon.png" alt="" />
+        <img class="size-8" src="/favicon.png" alt="Regex Generator AI" />
       </a>
       <ul class="flex grow items-center p-3 text-gray-200">
         {/* <li class={`border-b-2 ${active('/')} mx-1.5 sm:mx-6`}>

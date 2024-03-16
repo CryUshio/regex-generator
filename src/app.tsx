@@ -14,7 +14,7 @@ export default function App() {
           <div class="flex flex-col h-full">
             <Nav />
             <div class="grow flex flex-col overflow-auto">
-              <div class="grow">
+              <div class="grow overflow-hidden min-h-[620px]">
                 <Suspense>{props.children}</Suspense>
               </div>
               <Footer />

@@ -1,4 +1,25 @@
 .dropdown-content {
+  max-height: 260px;
+  overflow: auto;
+
+  > li {
+    margin-bottom: 2px;
+    margin-right: 2px;
+  }
+
+  &.default {
+    display: block !important;
+  }
+
+  &.raid {
+    width: max-content;
+    max-width: 26em;
+
+    > li {
+      width: 8em;
+    }
+  }
+
   .selected > a {
     --tw-bg-opacity: 1;
     background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));

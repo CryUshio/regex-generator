@@ -65,6 +65,7 @@ export default function MainInput(props: Props) {
         <Select
           defaultValue={lang()}
           options={OPTIONS}
+          mode="raid"
           onChange={(value) => {
             setLang(value);
             setStore({ lang: value });
