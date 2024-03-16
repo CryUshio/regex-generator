@@ -14,6 +14,21 @@ export default createHandler(() => (
           />
           <link rel="icon" href="/favicon.png" />
           {assets}
+          {/* Google Analysis */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WDT6EW9G2" />
+          <script>
+            {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-5WDT6EW9G2');`}
+          </script>
+          {/* Google Adsense */}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6715369444769710"
+            crossorigin="anonymous"
+          />
         </head>
         <body>
           <div id="app">{children}</div>
