@@ -27,7 +27,10 @@ jobs:
 
       # 运行命令，npm install
       - name: Install
-        run: node -v && pnpm i
+        run: |
+          node -v
+          npm install -g pnpm
+          pnpm i
 
       # 运行命令，npm run build
       - name: Build
