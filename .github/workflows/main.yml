@@ -21,9 +21,10 @@ jobs:
 
       # 安装使用 node:14.18.0
       - name: Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18.19.0 # node版本
+          cache: 'npm'
 
       # 运行命令，npm install
       - name: Install
@@ -38,8 +39,8 @@ jobs:
 
       - name: Debug
         run: |
-          ls ${{ env.BUILD_DIST }} 
-          echo ${{ env.SERVER_SSH_TARGET }}
+          ls ${{ vars.BUILD_DIST }} 
+          echo ${{ vars.SERVER_SSH_TARGET }}
 
       # 部署到腾讯云服务器
       - name: Upload files to server
