@@ -38,8 +38,8 @@ jobs:
 
       - name: Debug
         run: |
-          ls ${{ secrets.BUILD_DIST }} 
-          echo ${{ secrets.SERVER_SSH_TARGET }}
+          ls ${{ env.BUILD_DIST }} 
+          echo ${{ env.SERVER_SSH_TARGET }}
 
       # 部署到腾讯云服务器
       - name: Upload files to server
