@@ -3,6 +3,10 @@
   @apply flex items-center justify-center rounded-md transition duration-100 ease-linear hover:bg-white/10 active:bg-white/20;
 }
 
+.font-jost {
+  font-family: Jost, Arial, Helvetica, sans-serif;
+}
+
 .box-base {
   width: 640px;
   background-color: var(--item-normal-bg) !important;
