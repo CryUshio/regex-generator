@@ -12,7 +12,7 @@ on:
     - master
 
 jobs:
-  cache-and-install:
+  build-and-deploy:
     runs-on: ubuntu-latest # 跑 workflow 的服务器系统
     steps: # job的一系列动作 
       # 切换分支获取源码
@@ -47,9 +47,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-  build-and-deploy:
-    runs-on: ubuntu-latest # 跑 workflow 的服务器系统
-    steps: # job的一系列动作
       # 运行命令，npm run build
       - name: Build
         run: pnpm build
