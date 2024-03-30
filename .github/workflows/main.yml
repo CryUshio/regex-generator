@@ -60,4 +60,5 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }} # 本地.ssh文件下的私钥id_rsa，存在secrets中
           source: "./.output/*" # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
           target: ${{ vars.SERVER_SSH_TARGET }} # 目标目录
+          strip_components: 1 # 删除指定数量的前导路径元素
           rm: true
