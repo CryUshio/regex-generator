@@ -12,27 +12,42 @@ on:
     - master
 
 jobs:
-  build-and-deploy: # 构建 job
+  cache-and-install:
     runs-on: ubuntu-latest # 跑 workflow 的服务器系统
     steps: # job的一系列动作 
       # 切换分支获取源码
       - name: Checkout # step的名称，将会在 github action 的控制台中显示
-        uses: actions/checkout@v3 # 选择一个action，可以理解为若干 steps.run，有利于代码复用
+        uses: actions/checkout@v4 # 选择一个action，可以理解为若干 steps.run，有利于代码复用
 
-      # 安装使用 node:14.18.0
+      # 安装使用 node
       - name: Node
         uses: actions/setup-node@v4
         with:
           node-version: 18.19.0 # node版本
-          cache: 'npm'
 
-      # 运行命令，npm install
-      - name: Install
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
         run: |
-          node -v
-          npm install -g pnpm
-          pnpm i
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+  build-and-deploy:
       # 运行命令，npm run build
       - name: Build
         run: pnpm build
