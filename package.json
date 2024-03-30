@@ -11,6 +11,8 @@
     "@solid-primitives/clipboard": "^1.5.10",
     "@solidjs/router": "^0.12.0",
     "@solidjs/start": "^0.5.4",
+    "@supabase/supabase-js": "^2.41.1",
+    "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.14",
     "clsx": "^2.1.0",
     "highlight.js": "^11.9.0",
