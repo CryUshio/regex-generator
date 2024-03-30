@@ -48,6 +48,8 @@ jobs:
         run: pnpm install
 
   build-and-deploy:
+    runs-on: ubuntu-latest # 跑 workflow 的服务器系统
+    steps: # job的一系列动作
       # 运行命令，npm run build
       - name: Build
         run: pnpm build
