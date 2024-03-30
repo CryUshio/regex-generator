@@ -4,11 +4,13 @@ Say goodbye to the hassle of writing regular expressions.
 </p>
 
 <p align="center">
-<a href="" target="__blank"><img src="https://img.shields.io/static/v1?label=Online&message=website&color=228be6" alt="Regex generator online"></a>
+<!-- <a href="https://regex-generator-ai.com" target="__blank"><img src="https://img.shields.io/static/v1?label=Online&message=website&color=228be6" alt="Regex generator online"></a> -->
 <a href="https://github.com/CryUshio/regex-generator/blob/master/LICENSE"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=1c7ed6" alt="License"></a>
 <a><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FCryUshio%2Fregex-generator%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=version" alt="version"></a>
+<a href=""><img src="https://img.shields.io/github/actions/workflow/status/CryUshio/regex-generator/main.yml" alt="Workflow"></a>
 <a href="https://github.com/tabler/tabler" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CryUshio/regex-generator"></a>
 </p>
+<p align="center"><a href="https://regex-generator-ai.com">regex-generator-ai.com</a></p>
 
 ## Intro
 Harness the capabilities of GPT to effortlessly create regular expressions on demand. This tool focuses on simplifying text pattern matching by automatically generating regex code from your input descriptions. Achieve accurate results quickly and efficiently, without the complexity of manual regex crafting.
