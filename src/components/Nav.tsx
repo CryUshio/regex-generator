@@ -2,6 +2,7 @@ import { useLocation } from '@solidjs/router';
 import clsx from 'clsx';
 import IconItem from './IconItem';
 import ApiSetting from './ApiSetting';
+import SignInCard from './SignInCard';
 // import ThemeToggler from '../ThemeToggler';
 
 type Props = {
@@ -51,6 +52,13 @@ export default function Nav(props: Props) {
             <span>Sponsor project</span>
           </button>
         </li> */}
+        <li>
+          <SignInCard>
+            <button class="h-8 flex items-center px-2 ml-2 rounded-md border border-white text-white transition duration-100 ease-linear hover:bg-white hover:text-gray-950 active:bg-white/90 active:border-white/90">
+              <span>Sign in</span>
+            </button>
+          </SignInCard>
+        </li>
       </ul>
     </header>
   );

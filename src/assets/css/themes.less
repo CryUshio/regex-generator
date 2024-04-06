@@ -13,6 +13,8 @@
   --item-selected-composition: rgba(0, 0, 0, 0.05);
   --item-normal-bg-alpha: rgba(0, 0, 0, 0.03);
   --item-hover-bg-alpha: rgba(0, 0, 0, 0.06);
+
+  --item-divider: rgba(#050505, 6%);
 }
 
 :root[data-theme='dark'] {
@@ -23,4 +25,20 @@
   --text-color-placeholder: #8d9095;
   --text-color-disabled: #6c6e72;
   --text-color-active: var(--brand-color-blue);
+}
+
+.text-color-primary {
+  color: var(--text-color-primary);
+}
+
+.item-divider {
+  border-color: var(--item-divider);
+}
+
+.divider-y {
+  border-bottom: 1px solid var(--item-divider);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }

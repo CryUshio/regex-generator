@@ -1,0 +1,48 @@
+/* stylelint-disable at-rule-empty-line-before */
+.icon-item {
+  @apply flex items-center justify-center rounded-md transition duration-100 ease-linear hover:bg-white/10 active:bg-white/20;
+}
+
+.font-jost {
+  font-family: Jost, Arial, Helvetica, sans-serif;
+}
+
+.box-base {
+  width: 640px;
+  background-color: var(--item-normal-bg) !important;
+}
+
+.text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.modal-container {
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleX(0.95) scaleY(0.95);
+  transform-origin: top;
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    backdrop-filter,
+    -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}
