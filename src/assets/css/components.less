@@ -46,3 +46,17 @@
     transform: scaleX(1) scaleY(1);
   }
 }
+
+.animation-line-loading {
+  animation: line-loading 1s linear infinite;
+
+  @keyframes line-loading {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(150%);
+    }
+  }
+}

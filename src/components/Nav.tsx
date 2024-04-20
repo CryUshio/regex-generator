@@ -1,8 +1,12 @@
 import { useLocation } from '@solidjs/router';
 import clsx from 'clsx';
+import { Show, useContext } from 'solid-js';
+import { User } from '@supabase/supabase-js';
 import IconItem from './IconItem';
 import ApiSetting from './ApiSetting';
 import SignInCard from './SignInCard';
+import UserCard from './UserCard';
+import { Context } from '~/context';
 // import ThemeToggler from '../ThemeToggler';
 
 type Props = {
@@ -13,6 +17,8 @@ export default function Nav(props: Props) {
   const location = useLocation();
   const active = (path: string) =>
     path === location.pathname ? 'border-sky-200' : 'border-transparent hover:border-sky-600';
+
+  const { store } = useContext(Context);
 
   return (
     <header
@@ -53,13 +59,36 @@ export default function Nav(props: Props) {
           </button>
         </li> */}
         <li>
-          <SignInCard>
-            <button class="h-8 flex items-center px-2 ml-2 rounded-md border border-white text-white transition duration-100 ease-linear hover:bg-white hover:text-gray-950 active:bg-white/90 active:border-white/90">
-              <span>Sign in</span>
-            </button>
-          </SignInCard>
+          <UserProfile user={store.session?.user} />
         </li>
       </ul>
     </header>
+  );
+}
+
+function UserProfile(props: { user?: User }) {
+  const { store } = useContext(Context);
+
+  return (
+    <Show when={store.sessionInitialized} fallback={<div class="skeleton size-8 rounded-full ml-1" />}>
+      {props.user ? (
+        <UserCard>
+          <div class={clsx(['size-8 rounded-full overflow-hidden ml-1'])}>
+            <img src={props.user?.user_metadata?.picture} alt={props.user?.user_metadata?.name} />
+          </div>
+        </UserCard>
+      ) : (
+        <SignInCard>
+          <button
+            class={clsx([
+              'h-8 flex items-center px-2 ml-2 rounded-md border border-white text-white transition duration-100 ease-linear hover:bg-white hover:text-gray-950 active:bg-white/90 active:border-white/90',
+              { hidden: props.user },
+            ])}
+          >
+            <span>Sign in</span>
+          </button>
+        </SignInCard>
+      )}
+    </Show>
   );
 }
