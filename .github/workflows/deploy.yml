@@ -9,12 +9,14 @@ on:
   #   - master
   pull_request:
     branches:
-    - master
+      - master
+    types: [closed]
 
 jobs:
   build-and-deploy:
+    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest # 跑 workflow 的服务器系统
-    steps: # job的一系列动作 
+    steps: # job的一系列动作
       # 切换分支获取源码
       - name: Checkout # step的名称，将会在 github action 的控制台中显示
         uses: actions/checkout@v4 # 选择一个action，可以理解为若干 steps.run，有利于代码复用
@@ -58,7 +60,7 @@ jobs:
           host: ${{ secrets.SERVER_SSH_HOST }} # 服务器域名
           username: ${{ secrets.SERVER_SSH_USER }} # 腾讯云默认用户名为root
           key: ${{ secrets.SERVER_SSH_KEY }} # 本地.ssh文件下的私钥id_rsa，存在secrets中
-          source: ".output/,package.json" # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+          source: '.output/,package.json' # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
           target: ${{ vars.SERVER_SSH_TARGET }} # 目标目录
           # strip_components: 1 # 删除指定数量的前导路径元素
           rm: true
