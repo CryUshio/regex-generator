@@ -10,6 +10,15 @@ const srcPath = path.resolve(__dirname, './src');
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  start: {
+    ssr: true,
+    // middleware: './src/middlewares',
+    // server: {
+    //   prerender: {
+    //     crawlLinks: true,
+    //   },
+    // },
+  },
   resolve: {
     alias: {
       '@': srcPath,

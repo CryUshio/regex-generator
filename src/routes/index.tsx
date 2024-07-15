@@ -19,12 +19,6 @@ export default function Home() {
   const [result, setResult] = createSignal('');
   const [lang, setLang] = createSignal('');
 
-  // onMount(() => {
-  //   if (searchParams?.prompt) {
-  //     onSubmit(defaults(searchParams as Required<SearchParams>, { lang: lang() }));
-  //   }
-  // });
-
   const onSubmit = async (params: SearchParams) => {
     const { lang, prompt } = params;
 
@@ -106,9 +100,7 @@ export default function Home() {
 
   return (
     <main class="text-center mx-auto text-gray-950 textcolor-primary p-5">
-      <h1 class="max-6-xs text-5xl mt-16 mb-8 font-medium select-none" style={{ 'font-family': 'Jost' }}>
-        Regex Generator AI
-      </h1>
+      <h1 class="max-6-xs text-5xl mt-16 mb-8 font-medium font-jost select-none">Regex Generator AI</h1>
       <p
         class="max-2-xs max-w-xl text-lg text-center mx-auto mb-12 select-none"
         style={{ 'font-family': 'Jost', color: 'var(--text-color-regular)' }}
