@@ -16,6 +16,7 @@ jobs:
   build-and-deploy:
     if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest # 跑 workflow 的服务器系统
+    environment: Production
     steps: # job的一系列动作
       # 切换分支获取源码
       - name: Checkout # step的名称，将会在 github action 的控制台中显示
