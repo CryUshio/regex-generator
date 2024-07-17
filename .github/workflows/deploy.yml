@@ -32,10 +32,10 @@ jobs:
           touch .env
 
           echo VITE_SITE_DOMAIN=regex-generator-ai.com >> .env
-          echo VITE_GOOGLE_CLIENT_ID=${{ env.VITE_GOOGLE_CLIENT_ID }} >> .env
-          echo VITE_GOOGLE_CLIENT_KEY=${{ env.VITE_GOOGLE_CLIENT_KEY }} >> .env
-          echo VITE_SUPABASE_URL=${{ env.VITE_SUPABASE_URL }} >> .env
-          echo VITE_SUPABASE_KEY=${{ env.VITE_SUPABASE_KEY }} >> .env
+          echo VITE_GOOGLE_CLIENT_ID=${{ secrets.VITE_GOOGLE_CLIENT_ID }} >> .env
+          echo VITE_GOOGLE_CLIENT_KEY=${{ secrets.VITE_GOOGLE_CLIENT_KEY }} >> .env
+          echo VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }} >> .env
+          echo VITE_SUPABASE_KEY=${{ secrets.VITE_SUPABASE_KEY }} >> .env
 
           cat .env
           ls -a ./
