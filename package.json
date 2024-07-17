@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "npx vinxi start"
   },
   "dependencies": {
     "@solid-primitives/clipboard": "^1.5.10",
