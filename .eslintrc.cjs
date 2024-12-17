@@ -1,28 +1,25 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-    commonjs: true,
-    es6: true,
-  },
-  extends: ['plugin:solid/typescript', 'plugin:prettier/recommended'],
-  parser: '@typescript-eslint/parser',
-  plugins: [
+  '$schema': 'https://json.schemastore.org/eslintrc',
+  'root': true,
+  'extends': [
+    'next/core-web-vitals',
+    'prettier',
+    'plugin:tailwindcss/recommended',
+  ],
+  'plugins': [
     '@typescript-eslint',
-    'solid',
     'eslint-plugin-import',
     'eslint-plugin-eslint-comments',
     'eslint-plugin-jsdoc',
-    // 'prettier',
+    'tailwindcss',
+    'prettier',
   ],
-  parserOptions: {
-    // sourceType: 'module',
-    // ecmaVersion: 2021,
-    parser: '@typescript-eslint/parser',
-    jsx: true,
-  },
   rules: {
     // 0 = off, 1 = warn, 2 = error
+    '@next/next/no-html-link-for-pages': 'off',
+    'react/jsx-key': 'off',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'error',
     '@typescript-eslint/no-misused-promises': 0,
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/explicit-member-accessibility': 2,
@@ -281,4 +278,21 @@ module.exports = {
       },
     ],
   },
-};
+  'settings': {
+    'tailwindcss': {
+      'callees': [
+        'cn',
+      ],
+      'config': 'tailwind.config.ts',
+    },
+    'next': {
+      'rootDir': true,
+    },
+  },
+  'overrides': [
+    {
+      'files': ['*.ts', '*.tsx'],
+      'parser': '@typescript-eslint/parser',
+    },
+  ],
+}
